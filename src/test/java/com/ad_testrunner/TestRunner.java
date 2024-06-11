@@ -12,7 +12,11 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 @RunWith(Cucumber.class)
 @CucumberOptions 
 (features = "src\\test\\java\\com\\adactin\\feature\\ad.feature", 
-glue = "com.step")
+glue = "com.step", plugin = {
+        "pretty", // Standard pretty output
+        "html:target/cucumber-reports", // Generate HTML report
+        "json:target/cucumber-reports/cucumber.json" // Generate JSON report
+    })
 
 public class TestRunner {
 	
